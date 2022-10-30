@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net6.0-android;net6.0-ios;</TargetFrameworks>
@@ -41,24 +41,25 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.png" ForegroundFile="Resources\AppIcon\appicon.png" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash400a.png" Color="#202020">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</MauiSplashScreen>
+		<MauiSplashScreen Include="Resources\Splash\splash.png" Color="#202020"  />
+
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+		
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-		<MauiIcon Include="Resources\AppIcon\appicon.png" />
-		<MauiSplashScreen Include="Resources\Splash\splash.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</MauiSplashScreen>
-		<MauiSplashScreen Include="Resources\Splash\splash400a.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</MauiSplashScreen>
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Remove="Views\Page1.xaml" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <None Remove="Models\" />
+	  <None Remove="Resources\Splash\splash.png" />
 	  <None Remove="Views\" />
 	  <None Remove="ViewModels\" />
 	  <None Remove="Resources\Styles\" />
@@ -69,24 +70,30 @@
 	  <None Remove="Microsoft.Maui.Extensions" />
 	  <None Remove="Microsoft.Maui.Dependencies" />
 	  <None Remove="Resources\AppIcon\appicon.png" />
-	  <None Remove="Resources\Splash\splash400a.png" />
-	  <None Remove="Resources\Splash\splash.png" />
 	  <None Remove="Resources\Fonts\Metro.otf" />
 	  <None Remove="Resources\Images\splash.png" />
 	</ItemGroup>
+
+
 	<ItemGroup>
 	  <Folder Include="Models\" />
-	  <Folder Include="Views\" />
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="Resources\Styles\" />
 	  <Folder Include="Services\" />
 	</ItemGroup>
 	<ItemGroup>
+	  <MauiXaml Update="AppShell.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\PlanetsPage.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\PlanetDetailsPage.xaml">
 	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Page2.xaml">
+	    <SubType></SubType>
+	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\StartPage2.xaml">
 	    <SubType></SubType>
@@ -101,8 +108,16 @@
 	  </MauiFont>
 	</ItemGroup>
 	<ItemGroup>
+	  <MauiSplashScreen Include="Resources\Splash\splash.png" />
+	</ItemGroup>
+	<ItemGroup>
 	  <PackageReference Include="Microsoft.Maui.Extensions" Version="6.0.541" />
 	  <PackageReference Include="Microsoft.Maui.Dependencies" Version="6.0.541" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Views\Page2.xaml.cs">
+	    <DependentUpon>Page2.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiImage Update="Resources\Images\splash.png">
