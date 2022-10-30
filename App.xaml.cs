@@ -8,7 +8,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new StartPage2();
+		MainPage = new AppShell();
 		//MainPage = new NavigationPage(new PlanetDetailsPage(PlanetsService.GetPlanet("Uranus")));
     }
 }

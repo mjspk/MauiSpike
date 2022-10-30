@@ -1,6 +1,8 @@
-﻿using Microsoft.Maui.Controls.Hosting;
+﻿using MauiPlanets;
+using Microsoft.Maui.Controls.Hosting;
+using System.Security.Permissions;
 
-namespace BuddyNetworks.Roosters.Views;
+namespace MauiPlanets.Views;
 
 public partial class StartPage2 : ContentPage
 {
@@ -9,8 +11,8 @@ public partial class StartPage2 : ContentPage
 		InitializeComponent();
 	}
 
-	async void ExploreNow_Clicked(System.Object sender, System.EventArgs e)
+    async void ExploreNow_Clicked(object sender, System.EventArgs e)
 	{
-		Application.Current.MainPage = new NavigationPage(new PlanetsPage());
-	}
+        await Shell.Current.GoToAsync($"//{nameof(PlanetsPage)}");
+    }
 }
