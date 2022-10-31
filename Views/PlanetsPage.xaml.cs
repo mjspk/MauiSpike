@@ -1,5 +1,4 @@
-﻿using BuddyNetworks.Roosters.Views;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Diagnostics.Metrics;
 
 namespace MauiPlanets.Views;
@@ -22,10 +21,7 @@ public partial class PlanetsPage : ContentPage
         _viewModel.OnAppearing();
     }
 
-    async void Planets_SelectionChanged(object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
-    {
-        await Navigation.PushAsync(new Page2());
-    }
+   
 
     async void ProfilePic_Clicked(object sender, System.EventArgs e)
     {

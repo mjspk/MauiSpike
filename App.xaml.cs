@@ -1,5 +1,4 @@
-﻿using BuddyNetworks.Roosters.Views;
-
+﻿
 namespace MauiPlanets;
 
 public partial class App : Application
