@@ -6,6 +6,7 @@
     Title="StartPage2"
     Shell.NavBarIsVisible="False">
 
+    <!--add padding depending on the platform-->
     <Grid Padding="{StaticResource UniPadding}"  RowDefinitions="*,Auto" >
         <Image
             Grid.Row="0"

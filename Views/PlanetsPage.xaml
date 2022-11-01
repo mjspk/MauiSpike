@@ -25,6 +25,7 @@
                 <Label Style="{StaticResource PageHeaderStyle}" Text="Let's Explore" />
                 <Label Style="{StaticResource PageHeaderSubtitleStyle}" Text="The milky way galaxy" />
             </VerticalStackLayout>
+            <!--create a custom styling for the profile pic depending on the platform-->
             <Border
                 Grid.Row="0"
                 Grid.Column="1"
@@ -49,6 +50,7 @@
                     WidthRequest="{OnPlatform Android=53,
                                               iOS=50}">
                     <Image.Clip>
+                        <!--clip only required for ios--> 
                         <OnPlatform x:TypeArguments="EllipseGeometry">
                             <On Platform="iOS">
                                 <EllipseGeometry

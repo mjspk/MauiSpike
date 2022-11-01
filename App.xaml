@@ -14,7 +14,7 @@
         <Color x:Key="LightBorderColor">#d5d5d5</Color>
         <Color x:Key="LightTextColor">#d5d5d5</Color>
         <Color x:Key="DarkTextColor">#252525</Color>
-        <!--  start page padding  -->
+        <!--  start page padding depending on the platform -->
 
         <OnPlatform x:Key="UniPadding" x:TypeArguments="Thickness">
             <OnPlatform.Platforms>
