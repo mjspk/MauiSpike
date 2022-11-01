@@ -14,7 +14,15 @@
         <Color x:Key="LightBorderColor">#d5d5d5</Color>
         <Color x:Key="LightTextColor">#d5d5d5</Color>
         <Color x:Key="DarkTextColor">#252525</Color>
+        <!--  start page padding  -->
 
+        <OnPlatform x:Key="UniPadding" x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 0, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 30" />
+                <On Platform="UWP" Value="0, 0, 0, 0" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
         <!--  Content Page Style  -->
         <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
             <Setter Property="NavigationPage.HasNavigationBar" Value="False" />

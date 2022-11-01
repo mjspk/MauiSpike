@@ -28,12 +28,12 @@
             <Border
                 Grid.Row="0"
                 Grid.Column="1"
-                HeightRequest="56"
+                HeightRequest="{OnPlatform iOS=56}"
                 HorizontalOptions="End"
                 Stroke="{StaticResource LightBorderColor}"
                 StrokeThickness="6"
                 VerticalOptions="Center"
-                WidthRequest="56">
+                WidthRequest="{OnPlatform iOS=56}">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="28" />
                 </Border.StrokeShape>
@@ -41,16 +41,22 @@
                     <TapGestureRecognizer Tapped="ProfilePic_Clicked" />
                 </Border.GestureRecognizers>
                 <Image
-                    HeightRequest="50"
+                    HeightRequest="{OnPlatform Android=53,
+                                               iOS=50}"
                     HorizontalOptions="Center"
                     Source="profilepic.jpeg"
                     VerticalOptions="Center"
-                    WidthRequest="50">
+                    WidthRequest="{OnPlatform Android=53,
+                                              iOS=50}">
                     <Image.Clip>
-                        <EllipseGeometry
-                            Center="25,25"
-                            RadiusX="25"
-                            RadiusY="25" />
+                        <OnPlatform x:TypeArguments="EllipseGeometry">
+                            <On Platform="iOS">
+                                <EllipseGeometry
+                                    Center="25,25"
+                                    RadiusX="25"
+                                    RadiusY="25" />
+                            </On>
+                        </OnPlatform>
                     </Image.Clip>
                 </Image>
             </Border>

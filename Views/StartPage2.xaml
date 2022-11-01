@@ -1,43 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiPlanets.Views.StartPage2"
-            Shell.NavBarIsVisible="False"
-             Title="StartPage2">
-    <Grid>
-        <Image Aspect="AspectFit" Source="splash.png"></Image>
-        <Grid>
+<ContentPage
+    x:Class="MauiPlanets.Views.StartPage2"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="StartPage2"
+    Shell.NavBarIsVisible="False">
+
+    <Grid Padding="{StaticResource UniPadding}"  RowDefinitions="*,Auto" >
+        <Image
+            Grid.Row="0"
+            Aspect="AspectFit"
+            HeightRequest="250"
+            HorizontalOptions="CenterAndExpand"
+            Source="splash.png"
+            VerticalOptions="EndAndExpand"
+            WidthRequest="250" />
+        <Grid Grid.Row="1" >
             <Border
-            x:Name="frmIntro"
-            Opacity="100"
-            Padding="24,32"
-            BackgroundColor="{StaticResource FrameBackgroundColor}"
-            Stroke="{StaticResource BorderColor}"
-            HorizontalOptions="Fill"
-            VerticalOptions="End"
-            Margin="20">
+                x:Name="frmIntro"
+                Margin="20"
+                Padding="24,32"
+                BackgroundColor="{StaticResource FrameBackgroundColor}"
+                HorizontalOptions="Fill"
+                Opacity="100"
+                Stroke="{StaticResource BorderColor}"
+                VerticalOptions="End">
                 <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="24"/>
+                    <RoundRectangle CornerRadius="24" />
                 </Border.StrokeShape>
-                <VerticalStackLayout
-                Spacing="16">
+                <VerticalStackLayout Spacing="16">
                     <Label
-                    HorizontalOptions="Center"
-                    HorizontalTextAlignment="Center"
-                    Style="{StaticResource IntroPageHeaderStyle}"
-                    Text="Hello!"/>
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource IntroPageHeaderStyle}"
+                        Text="Hello!" />
                     <Label
-                    HorizontalOptions="Center"
-                    HorizontalTextAlignment="Center"
-                    LineBreakMode="WordWrap"
-                    Style="{StaticResource IntroPageTextStyle}"
-                    Text="Want to know and explain all things about the planets in the Milky Way galaxy?"/>
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        LineBreakMode="WordWrap"
+                        Style="{StaticResource IntroPageTextStyle}"
+                        Text="Want to know and explain all things about the planets in the Milky Way galaxy?" />
                     <Button
-                    Style="{StaticResource ButtonStyle}"
-                    Text="Explore Now"
-                    HorizontalOptions="Center"
-                    Margin="0,12,0,6"
-                    Clicked="ExploreNow_Clicked"/>
+                        Margin="0,12,0,6"
+                        Clicked="ExploreNow_Clicked"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource ButtonStyle}"
+                        Text="Explore Now" />
                 </VerticalStackLayout>
             </Border>
         </Grid>
