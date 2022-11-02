@@ -25,7 +25,11 @@
                 <Label Style="{StaticResource PageHeaderStyle}" Text="Let's Explore" />
                 <Label Style="{StaticResource PageHeaderSubtitleStyle}" Text="The milky way galaxy" />
             </VerticalStackLayout>
-            <!--create a custom styling for the profile pic depending on the platform-->
+            <!--
+                create a custom styling for the profile pic depending on the platform
+                the border doesn't need height/width only for ios
+                , the boder behavie differently on both platforms
+            -->
             <Border
                 Grid.Row="0"
                 Grid.Column="1"
@@ -50,7 +54,12 @@
                     WidthRequest="{OnPlatform Android=53,
                                               iOS=50}">
                     <Image.Clip>
-                        <!--clip only required for ios--> 
+                        <!--
+                            clip only required for ios
+                            as android has clip to the bound of the border control
+                            but having the clip will make it look smaller as the border
+                            size depend on the image not on the height and width of the border itself
+                        -->
                         <OnPlatform x:TypeArguments="EllipseGeometry">
                             <On Platform="iOS">
                                 <EllipseGeometry

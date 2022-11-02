@@ -6,8 +6,11 @@
     Title="StartPage2"
     Shell.NavBarIsVisible="False">
 
-    <!--add padding depending on the platform-->
-    <Grid Padding="{StaticResource UniPadding}"  RowDefinitions="*,Auto" >
+    <!--
+        add padding depending on the platform ,
+        ios padding for grid to space out from the swipe area make it looks different from android
+    -->
+    <Grid Padding="{StaticResource UniPadding}" RowDefinitions="*,Auto">
         <Image
             Grid.Row="0"
             Aspect="AspectFit"
@@ -16,7 +19,7 @@
             Source="splash.png"
             VerticalOptions="EndAndExpand"
             WidthRequest="250" />
-        <Grid Grid.Row="1" >
+        <Grid Grid.Row="1">
             <Border
                 x:Name="frmIntro"
                 Margin="20"

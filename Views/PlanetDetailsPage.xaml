@@ -100,7 +100,10 @@
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <!--  collection view hav't updated to work with any new maui controls use old xamarin controls  -->
+                            <!--
+                                collection view have not been updated to work with any new maui controls use old xamarin controls
+                                use stacklayout inside the DataTemplate frames/borders will fill the whole collection only one element will show
+                            -->
                             <StackLayout>
                                 <Frame
                                     Padding="0"
